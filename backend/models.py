@@ -13,6 +13,7 @@ class Friend(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "role": self.role,
             "description": self.description,
             "gender": self.gender,
             "imgUrl": self.img_url
