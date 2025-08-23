@@ -20,7 +20,8 @@ def create_friend():
 
         required_fields = ["name", "role", "description", "gender"]
         for field in required_fields:
-            return jsonify({"error":f"Missing required field: {field}"}), 400
+            if field not in data:
+              return jsonify({"error":f"Missing required field: {field}"}), 400
 
         name = data.get("name")
         role = data.get("role")
